@@ -425,6 +425,9 @@ h1 {
 			margin-top: 2rem;
 			color: #ccc;
 		}
+		@media (max-width: $mobBreak) {
+			margin-top: 8rem;
+		}
 	}
 }
 
