@@ -332,6 +332,7 @@ h1 {
 		.menu {
 			display: flex;
 			margin: 0;
+			padding: 0;
 			@media (max-width: $mobBreak) {
 				margin-top: 2rem;
 				display: block;
@@ -339,6 +340,9 @@ h1 {
 			li {
 				list-style: none;
 				margin: 0 1rem;
+				@media (max-width: $mobBreak) {
+					margin-left: 0;
+				}
 				&:last-child {
 					margin-right: 0;
 				}
