@@ -1,4 +1,8 @@
-<div class="component-hero" style="background-image:url(<?php echo $block['image'];?>)">
+<div class="component-hero">
+<div class="background" style="background-image:url(<?php echo $block['image'];?>)"></div>
+
+    <div class="overlay" style="background-image:url(<?php echo $block['overlay'];?>)"></div>
+
     <div class="wrapped">
     <div class="highlight">
             <?php echo $block['highlight'];?>

@@ -370,12 +370,46 @@ h1 {
 }
 
 .component-hero {
-	height: 66vh;
+	height: 80vh;
 	display: flex;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center right;
 	align-items: center;
+	position: relative;
+	overflow: hidden;
+	.background {
+		@keyframes zoom {
+			0% {
+				transform: scale(1);
+			}
+			50% {
+				transform: scale(1.05);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+		animation: zoom 20s infinite linear;
+		background-size: cover;
+		background-position: center right;
+
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+	.overlay {
+		background-size: cover;
+		background-position: center right;
+
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
 	@media (max-width: $mobBreak) {
 		text-align: center;
 		position: relative;
@@ -395,12 +429,27 @@ h1 {
 		}
 	}
 	.wrapped {
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateX(-100%);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+		position: relative;
+		z-index: 9;
 		width: 100%;
 		.highlight {
 			font-family: "Besom";
 			color: $red;
 			font-size: 8rem;
 			line-height: 1;
+			animation: fadeIn 2s;
+
 			@media (max-width: $padBreak) {
 				font-size: 6rem;
 			}
@@ -413,6 +462,12 @@ h1 {
 			font-weight: bold;
 			color: #fff;
 			line-height: 1;
+			transform: translateX(-100%);
+
+			animation: fadeIn 2s;
+			animation-delay: 0.5s;
+			animation-fill-mode: forwards;
+
 			font-size: 4rem;
 			@media (max-width: $padBreak) {
 				font-size: 3rem;
@@ -424,6 +479,11 @@ h1 {
 		.subline {
 			margin-top: 2rem;
 			color: #ccc;
+			transform: translateX(-100%);
+
+			animation: fadeIn 2s;
+			animation-delay: 1s;
+			animation-fill-mode: forwards;
 		}
 		@media (max-width: $mobBreak) {
 			margin-top: 8rem;
