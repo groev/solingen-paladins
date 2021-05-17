@@ -383,14 +383,13 @@ h1 {
 			0% {
 				transform: scale(1);
 			}
-			50% {
-				transform: scale(1.05);
-			}
 			100% {
-				transform: scale(1);
+				transform: scale(1.1);
 			}
 		}
-		animation: zoom 20s infinite linear;
+		animation-fill-mode: forwards;
+
+		animation: zoom 40s infinite ease;
 		background-size: cover;
 		background-position: center right;
 
