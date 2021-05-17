@@ -1,4 +1,6 @@
-@font-face{font-family:"Besom";font-style:normal;font-weight:normal;src:local("Besom"),url("../fonts/Besom.woff") format("woff")}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;
+
+700&family=Roboto:wght@400;700&display=swap");@font-face{font-family:"Besom";font-style:normal;font-weight:normal;src:local("Besom"),url("../fonts/Besom.woff") format("woff")}
 .theme-rot{background:#d00000;color:#fff}
 .theme-rot a{color:#fff}
 .theme-schwarz{background:#000;color:#fff}
