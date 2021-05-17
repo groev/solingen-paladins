@@ -594,6 +594,9 @@ h1 {
 		height: 50vh;
 		background-size: cover;
 		background-position: center;
+		@media (max-width: $mobBreak) {
+			height: 30vh;
+		}
 	}
 	.content {
 		padding: 4rem;
