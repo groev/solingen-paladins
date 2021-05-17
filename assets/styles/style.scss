@@ -597,6 +597,9 @@ h1 {
 	}
 	.content {
 		padding: 4rem;
+		@media (max-width: $mobBreak) {
+			padding: 0;
+		}
 	}
 	h1 {
 		margin: 0;

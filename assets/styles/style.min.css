@@ -140,6 +140,7 @@ h1{font-size:3rem;line-height:1.3}
 .component-block .image-holder{height:33vh}
 .component-block .content{padding:3rem}
 .component-news .news-grid{grid-template-columns:repeat(1,1fr)}
+.single-news .content{padding:0}
 .loop-grid{grid-template-columns:1fr !important}
 .component-bildraster .grid{grid-template-columns:1fr !important}
 .component-ansprechpartner .person-grid{grid-template-columns:1fr !important}
