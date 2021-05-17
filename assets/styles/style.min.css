@@ -27,7 +27,7 @@ h1{font-size:3rem;line-height:1.3}
 .menu-visible .header .social .menu-toggle{-webkit-transform:rotate(90deg);transform:rotate(90deg);-webkit-transition:all .3s ease;transition:all .3s ease}
 .footer{background:#333;padding:4rem;color:#666}
 .footer .wrapped{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
-.footer .wrapped .menu{display:-webkit-box;display:-ms-flexbox;display:flex;margin:0;margin-top:2rem}
+.footer .wrapped .menu{display:-webkit-box;display:-ms-flexbox;display:flex;margin:0}
 .footer .wrapped .menu li{list-style:none;margin:0 1rem}
 .footer .wrapped .menu li:last-child{margin-right:0}
 .footer .wrapped .menu li a{text-decoration:none;color:#666}
@@ -129,7 +129,7 @@ h1{font-size:3rem;line-height:1.3}
 .component-block .headline{font-size:3rem}
 }@media(max-width:672px){h1{font-size:2rem}
 .footer .wrapped{display:block}
-.footer .wrapped .menu{display:block}
+.footer .wrapped .menu{margin-top:2rem;display:block}
 .component-hero{text-align:center;position:relative}
 .component-hero:after{background:rgba(0,0,0,0.5);content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:10}
 .component-hero .wrapped{position:relative;z-index:11}

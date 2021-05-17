@@ -332,8 +332,8 @@ h1 {
 		.menu {
 			display: flex;
 			margin: 0;
-			margin-top: 2rem;
 			@media (max-width: $mobBreak) {
+				margin-top: 2rem;
 				display: block;
 			}
 			li {
