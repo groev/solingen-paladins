@@ -596,6 +596,7 @@ h1 {
 		background-position: center;
 		@media (max-width: $mobBreak) {
 			height: 30vh;
+			margin-bottom: 2rem;
 		}
 	}
 	.content {
