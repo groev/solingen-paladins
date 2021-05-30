@@ -745,11 +745,12 @@ h1 {
 			align-items: center;
 			justify-content: center;
 			background: #fff;
+			img {
+				max-width: 80%;
+				height: auto;
+			}
 		}
-		img {
-			max-width: 80%;
-			height: auto;
-		}
+
 		grid-gap: 4rem;
 		display: grid;
 		@media (max-width: $mobBreak) {
