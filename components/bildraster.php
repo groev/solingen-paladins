@@ -3,7 +3,7 @@
     <div class="grid" style="grid-template-columns: repeat(<?php echo $block['spaltenzahl'];?>,1fr)">
     <?php $bilder = $block['bilder'];
     if($bilder):foreach($bilder as $bild):?>
-        <a href="<?php echo $bild['link']['url'];?>" target="_blank">
+        <a href="<?php echo $bild['link'];?>" target="_blank">
             <img src="<?php echo $bild['bild'];?>" alt="Bild" />
         </a>
     <?php endforeach;endif;?>
