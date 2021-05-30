@@ -87,7 +87,7 @@ h1{font-size:3rem;line-height:1.3}
 .loop-grid .post .inner .date{color:#666;font-weight:bold;font-size:.75rem}
 .loop-grid .post .inner h3{font-size:2rem;line-height:1;margin:0;color:#000}
 .component-bildraster .grid{margin-top:2rem;text-align:center;grid-gap:4rem;display:grid}
-.component-bildraster .grid a{background:#fff}
+.component-bildraster .grid a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#fff}
 .component-bildraster .grid img{max-width:80%;height:auto}
 .component-ansprechpartner .person-grid{margin:4rem 0;display:grid;grid-gap:2rem}
 .component-ansprechpartner .person-grid .position{color:#666;font-weight:bold;font-size:.75rem}
