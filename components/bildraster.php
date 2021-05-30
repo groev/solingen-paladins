@@ -4,6 +4,7 @@
     <?php $bilder = $block['bilder'];
     if($bilder):foreach($bilder as $bild):?>
         <a href="<?php echo $bild['link'];?>" target="_blank">
+        <?php var_dump($bild['link']);?>
             <img src="<?php echo $bild['bild'];?>" alt="Bild" />
         </a>
     <?php endforeach;endif;?>
