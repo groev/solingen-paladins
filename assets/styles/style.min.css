@@ -89,6 +89,14 @@ h1{font-size:3rem;line-height:1.3}
 .component-bildraster .grid{margin-top:2rem;text-align:center;grid-gap:4rem;display:grid}
 .component-bildraster .grid a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#fff}
 .component-bildraster .grid a img{max-width:80%;height:auto}
+.component-live{background:#333;padding-top:100px;padding-bottom:100px}
+.component-live h2{margin:0;margin-bottom:2rem;color:#fff}
+.component-live .wrapped{grid-gap:2rem;display:grid;grid-template-columns:5fr 1fr}
+.component-live .wrapped iframe{max-width:100%}
+.component-live .wrapped a{color:#fff}
+.component-live img{width:100px;height:auto;max-width:100%}
+.component-live .qr{color:#fff;font-size:12px}
+.component-live .qr h2{font-size:2rem}
 .component-ansprechpartner .person-grid{margin:4rem 0;display:grid;grid-gap:2rem}
 .component-ansprechpartner .person-grid .position{color:#666;font-weight:bold;font-size:.75rem}
 .component-ansprechpartner .person-grid .person{border-radius:3px;-webkit-box-shadow:0 2px 1px rgba(0,0,0,0.2);box-shadow:0 2px 1px rgba(0,0,0,0.2)}

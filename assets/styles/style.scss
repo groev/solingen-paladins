@@ -759,6 +759,40 @@ h1 {
 	}
 }
 
+.component-live {
+	background: #333;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	h2 {
+		margin: 0;
+		margin-bottom: 2rem;
+		color: #fff;
+	}
+	.wrapped {
+		iframe {
+			max-width: 100%;
+		}
+		grid-gap: 2rem;
+		display: grid;
+		grid-template-columns: 5fr 1fr;
+		a {
+			color: #fff;
+		}
+	}
+	img {
+		width: 100px;
+		height: auto;
+		max-width: 100%;
+	}
+	.qr {
+		color: #fff;
+		font-size: 12px;
+		h2 {
+			font-size: 2rem;
+		}
+	}
+}
+
 .component-ansprechpartner {
 	.person-grid {
 		margin: 4rem 0;
