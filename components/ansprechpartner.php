@@ -1,5 +1,5 @@
 <div class="component-ansprechpartner wrapped">
-    <h2 class="divider"><?php echo $block['headline'];?></h2>
+    <h2 class="divider"><span><?php echo $block['headline'];?></span></h2>
     <div class="person-grid" style="grid-template-columns: repeat(<?php echo $block['spaltenzahl'];?>,1fr)">
     <?php $bilder = $block['personen'];
     if($bilder):foreach($bilder as $bild):?>
@@ -15,8 +15,7 @@
         <h3><?php echo $bild['name'];?></h3>
         <div class="position"><?php  echo $bild['position'];?></div>
         <div class="contact"><a href="mailto:<?php  echo $bild['email'];?>"><?php  echo $bild['email'];?></a></div>
-
-</div>
+    </div>
 
     </div>
 

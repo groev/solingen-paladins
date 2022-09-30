@@ -1,5 +1,5 @@
 <div class="component-bildraster wrapped">
-    <h2 class="divider"><?php echo $block['headline'];?></h2>
+    <h2 class="divider"><span><?php echo $block['headline'];?></span></h2>
     <div class="grid" style="grid-template-columns: repeat(<?php echo $block['spaltenzahl'];?>,1fr)">
     <?php $bilder = $block['bilder'];
     if($bilder):foreach($bilder as $bild):?>

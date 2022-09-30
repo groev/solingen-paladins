@@ -7,7 +7,7 @@
 ?>
 
 <div class="component-news wrapped">
-    <h2 class="divider">Aktuelle Neuigkeiten</h2>
+    <h2 class="divider"><span>Aktuelle Neuigkeiten</span></h2>
     <div class="news-grid">
 <?php if($news):foreach($news as $post):?>
     <a href="<?php echo get_permalink($post->ID);?>" class="post">
@@ -22,4 +22,6 @@
 <?php endforeach;endif;?>
 </div>
 
-</Div>
+
+
+</div>

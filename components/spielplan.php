@@ -10,7 +10,7 @@
 ?>
 
 <div class="component-spielplan wrapped">
-    <h2 class="divider">Nächste Spiele</h2>
+    <h2 class="divider"><span>Nächste Spiele</span></h2>
     <div class="game-grid">
 <?php if($news):foreach($news as $post):?>
     <div class="game">

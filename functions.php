@@ -10,6 +10,8 @@
             add_action('init', array($this, 'add_options_page'));
             add_filter('show_admin_bar', '__return_false');
             add_action('init', array($this, 'remove_page_content'));
+      
+            add_filter( 'excerpt_length', array($this, 'shorten_excerpt'), 999 );
             add_theme_support( 'post-thumbnails' );
             require_once PALAPATH.'/models/spielplan.php';
         }
@@ -22,6 +24,10 @@
             wp_enqueue_style( 'paladins-slick-theme','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
             wp_enqueue_style( 'paladins-slick-style','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
 
+        }
+
+        public function shorten_excerpt() {
+            return 25;
         }
 
         public function register_paladins_menu() {
