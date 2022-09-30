@@ -170,10 +170,12 @@ h1 {
 								}
 							}
 							min-width: 300px;
-							padding: 0.5rem 1rem;
 
 							a {
+								padding: 0.5rem 1rem;
 								color: $black;
+								display: block;
+								width: 100%;
 								&:hover {
 									border-bottom: 0px;
 								}
