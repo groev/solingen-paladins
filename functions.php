@@ -13,6 +13,9 @@
       
             add_filter( 'excerpt_length', array($this, 'shorten_excerpt'), 999 );
             add_theme_support( 'post-thumbnails' );
+            add_filter('acf/settings/save_json', array($this, 'save_json'));
+            add_filter('acf/settings/load_json', array($this, 'load_json'));
+
             require_once PALAPATH.'/models/spielplan.php';
         }
 
@@ -23,7 +26,6 @@
             wp_enqueue_style( 'paladins-slickstyle','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
             wp_enqueue_style( 'paladins-slick-theme','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
             wp_enqueue_style( 'paladins-slick-style','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
-
         }
 
         public function shorten_excerpt() {
@@ -62,6 +64,16 @@
 
         }
 
+        public function save_json($path) {
+            $path = get_stylesheet_directory() . '/fields';
+            return $path;
+        }
+
+        public function load_json($paths) {
+            unset($paths[0]);
+            $paths[] = get_stylesheet_directory() . '/fields';
+            return $paths;
+        }
       
 
     }

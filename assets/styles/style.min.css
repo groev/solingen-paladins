@@ -181,6 +181,7 @@ h1{font-size:3rem;line-height:1.3}
 .loop-grid{grid-template-columns:1fr !important}
 .component-bildraster .grid{grid-template-columns:1fr !important}
 .component-ansprechpartner .person-grid{grid-template-columns:1fr !important}
+.component-slider .wrapped{grid-template-columns:1fr}
 }@-webkit-keyframes zoom{0%{-webkit-transform:scale(1);transform:scale(1)}
 100%{-webkit-transform:scale(1.1);transform:scale(1.1)}
 }@keyframes zoom{0%{-webkit-transform:scale(1);transform:scale(1)}

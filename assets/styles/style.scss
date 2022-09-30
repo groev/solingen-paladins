@@ -868,6 +868,9 @@ h1 {
 		display: grid;
 		grid-gap: 2rem;
 		grid-template-columns: 2fr 1fr;
+		@media (max-width: $mobBreak) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.news-slider {
