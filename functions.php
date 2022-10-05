@@ -20,7 +20,7 @@
         }
 
         public function register_styles_and_scripts() {
-            wp_enqueue_style( 'paladins-style', PALAURL.'/assets/styles/style.min.css', array(), time());
+            wp_enqueue_style( 'paladins-style', PALAURL.'/assets/styles/style.min.css', array(), '300');
             wp_enqueue_script( 'paladins-script', PALAURL.'/assets/scripts/custom.min.js', array('jquery', 'paladins-slick'), time(), true );
             wp_enqueue_script( 'paladins-slick','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), time(), true );
             wp_enqueue_style( 'paladins-slickstyle','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
