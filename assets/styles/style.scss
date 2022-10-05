@@ -888,8 +888,8 @@ h1 {
 }
 
 .component-slider {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-top: 4rem;
+	padding-bottom: 3rem;
 	.wrapped {
 		display: grid;
 		grid-gap: 2rem;
@@ -897,6 +897,10 @@ h1 {
 		@media (max-width: $mobBreak) {
 			grid-template-columns: 1fr;
 		}
+	}
+	@media (max-width: $mobBreak) {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	.news-slider {
