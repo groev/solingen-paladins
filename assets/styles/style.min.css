@@ -82,7 +82,7 @@ h1{font-size:3rem;line-height:1.3}
 .single-news .date{font-weight:bold;color:#666}
 .component-image{height:50vh;background-size:cover;background-position:center}
 .loop-grid{display:grid;grid-gap:2rem;grid-template-columns:1fr 1fr 1fr}
-.loop-grid .thumb-holder{display:-webkit-box;display:-ms-flexbox;display:flex;height:25vh;-o-object-fit:cover;object-fit:cover}
+.loop-grid .thumb-holder{display:-webkit-box;display:-ms-flexbox;display:flex;height:25vh;-o-object-fit:cover;object-fit:cover;overflow:hidden}
 .loop-grid .thumb-holder img{-o-object-fit:cover;object-fit:cover;width:100%;height:auto;max-width:100%}
 .loop-grid .post{-webkit-transition:all .3s ease;transition:all .3s ease;border-radius:3px;overflow:hidden;-webkit-box-shadow:0 2px 1px rgba(0,0,0,0.2);box-shadow:0 2px 1px rgba(0,0,0,0.2);text-decoration:none;background:#fff}
 .loop-grid .post img{width:100%;height:auto}

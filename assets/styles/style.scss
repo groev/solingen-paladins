@@ -732,6 +732,7 @@ h1 {
 		display: flex;
 		height: 25vh;
 		object-fit: cover;
+		overflow: hidden;
 		img {
 			object-fit: cover;
 			width: 100%;
