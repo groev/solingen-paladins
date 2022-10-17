@@ -166,6 +166,7 @@ h1 {
 						display: block !important;
 					}
 					.sub-menu {
+						z-index: 99999999999;
 						display: none;
 						position: absolute;
 						background: #fff;
@@ -730,10 +731,12 @@ h1 {
 	.thumb-holder {
 		display: flex;
 		height: 25vh;
+		object-fit: cover;
 		img {
 			object-fit: cover;
 			width: 100%;
 			height: auto;
+			max-width: 100%;
 		}
 	}
 
