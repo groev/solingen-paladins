@@ -791,6 +791,15 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_64340df2b5521": {
+                    "key": "layout_64340df2b5521",
+                    "name": "slider",
+                    "label": "Slider",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -815,5 +824,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1681131760
+    "modified": 1681133047
 }

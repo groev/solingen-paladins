@@ -18,9 +18,10 @@ jQuery(document).ready(function ($) {
   });
   $(".slider-inner").slick({
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 5,
     dots: true,
     arrows: true,
+    autoplay: true,
     responsive: [{
       breakpoint: 800,
       // tablet breakpoint
