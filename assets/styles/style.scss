@@ -1021,6 +1021,11 @@ h1 {
 }
 
 .slider-inner {
+	a {
+		background: white;
+		height: 100px;
+		padding: 0.5rem;
+	}
 	a img {
 		max-height: 100px;
 		max-width: 200px;
