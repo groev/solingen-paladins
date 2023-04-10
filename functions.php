@@ -20,10 +20,10 @@
         }
 
         public function register_styles_and_scripts() {
-            wp_enqueue_style( 'roboto-style','https://fonts.12-05.com/roboto/style.css', array(), '302');
-            wp_enqueue_style( 'roboto2-style','https://fonts.12-05.com/robotocondensed/style.css', array(), '302');
-            wp_enqueue_style( 'paladins-style', PALAURL.'/assets/styles/style.min.css', array(), '302');
-            wp_enqueue_script( 'paladins-script', PALAURL.'/assets/scripts/custom.min.js', array('jquery', 'paladins-slick'), time(), true );
+            wp_enqueue_style( 'roboto-style','https://fonts.12-05.com/roboto/style.css', array(), '303');
+            wp_enqueue_style( 'roboto2-style','https://fonts.12-05.com/robotocondensed/style.css', array(), '303');
+            wp_enqueue_style( 'paladins-style', PALAURL.'/assets/styles/style.min.css', array(), '303');
+            wp_enqueue_script( 'paladins-script', PALAURL.'/assets/scripts/custom.min.js?version=5', array('jquery', 'paladins-slick'), time(), true );
             wp_enqueue_script( 'paladins-slick',PALAURL.'/assets/ext/slick.min.js', array('jquery'), time(), true );
             wp_enqueue_style( 'paladins-slickstyle',PALAURL.'/assets/ext/slick-theme.min.css');
             wp_enqueue_style( 'paladins-slick-style',PALAURL.'/assets/ext/slick.min.css');
