@@ -762,10 +762,33 @@
                 },
                 "layout_633613c9c1236": {
                     "key": "layout_633613c9c1236",
-                    "name": "slider",
-                    "label": "Slider",
+                    "name": "sponsorenslider",
+                    "label": "Sponsorenslider",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_643408ca34a8c",
+                            "label": "Bildquelle",
+                            "name": "bildquelle",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "page"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "id",
+                            "ui": 1
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -792,5 +815,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1664567190
+    "modified": 1681131760
 }

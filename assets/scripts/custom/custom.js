@@ -17,6 +17,21 @@ jQuery(document).ready(function ($) {
 			},
 		],
 	});
+	$(".slider-inner").slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		dots: true,
+		arrows: true,
+		responsive: [
+			{
+				breakpoint: 800, // tablet breakpoint
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	});
 	$(".news-slider").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
