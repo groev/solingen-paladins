@@ -52,7 +52,8 @@
                 return array(
                     'id' => $p->ID,
                     'title' => $p->post_title,
-                    'inhalt' => get_field('content', $p->ID)
+                    'inhalt' => get_field('content', $p->ID),
+                    'global' => $this->getHeader()
                 );
             }
             return new WP_Error('not found', 404);
