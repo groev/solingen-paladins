@@ -17,6 +17,8 @@
             add_filter('acf/settings/load_json', array($this, 'load_json'));
 
             require_once PALAPATH.'/models/spielplan.php';
+            require_once PALAPATH.'/next/api.php';
+
         }
 
         public function register_styles_and_scripts() {
