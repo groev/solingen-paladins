@@ -63,7 +63,7 @@
             return array(
                 'logo' => get_field('theme_logo', 'option'),
                 'social' => get_field('social_media', 'option'),
-                'menu' => 
+                'menu' => $this->get_menu()
             );
         }
 
