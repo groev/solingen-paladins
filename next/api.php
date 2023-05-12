@@ -36,7 +36,7 @@
             return $data;
         }
 
-        public function getPageBySlug() {
+        public function getPageBySlug($request) {
             $posts = get_posts(array(
                 'post_type' => 'page', 
                 'name' => $request['slug'],
