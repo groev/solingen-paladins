@@ -92,7 +92,7 @@
                 }
             }
     
-            return $navbar_items;
+            return array_values($navbar_items);
         }
     }
     $init = new PaladinsNextApi();
