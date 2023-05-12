@@ -81,7 +81,7 @@
             // push child items into their parent item in the original object
             foreach ($navbar_items as $item) {
                 foreach ($child_items as $key => $child) {
-                    if ($child->menu_item_parent == $item->post_name) {
+                    if ($child->menu_item_parent == $item->object_id) {
                         if (!$item->child_items) {
                             $item->child_items = [];
                         }
