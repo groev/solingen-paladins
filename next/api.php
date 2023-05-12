@@ -15,6 +15,11 @@
                 'methods' => 'GET',
                 'callback' => array($this, 'getPageBySlug'),
             ));
+
+            register_rest_route( 'next', '/header', array(
+                'methods' => 'GET',
+                'callback' => array($this, 'getHeader'),
+            ));
         }
 
         public function getAllPages() {
@@ -51,6 +56,14 @@
                 );
             }
             return new WP_Error('not found', 404);
+        }
+
+        public function getHeader() {
+            return array(
+                'logo' => get_field('theme_logo', 'option'),
+                'social' => get_field('social_media', 'option'),
+                'menu' => wp_get_nav_menu_items('hauptnavigation')
+            );
         }
     }
     $init = new PaladinsNextApi();
