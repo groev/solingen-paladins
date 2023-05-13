@@ -4,6 +4,8 @@
         public function __construct() {
             add_action('rest_api_init', array($this, 'register_endpoints'));
             add_filter( 'acf/format_value/name=news_data', array($this, 'extend_news_data'));
+            add_filter( 'acf/format_value/name=slider_data', array($this, 'extend_slider_data'));
+
 
         }
 
@@ -90,6 +92,26 @@
                         'bild' => get_the_post_thumbnail($post->ID, 'medium' ),
                         'datum' =>  get_the_date('d.m.Y', $post->ID),
                         'title' => $post->post_title
+                    );
+                }
+            }
+            return $arr;
+        }
+
+        public function extend_slider_data() {
+            $news = get_posts(array(
+                'post_type' => 'post',
+                'posts_per_page' => 5
+            ));
+            $arr = array();
+            if($news) {
+                foreach($news as $post) {
+                    $arr[] = array(
+                        'link' => get_permalink($post->ID),
+                        'bild' => get_the_post_thumbnail($post->ID, 'large' ),
+                        'datum' =>  get_the_date('d.m.Y', $post->ID),
+                        'title' => $post->post_title,
+                        'auszug' => get_the_excerpt($post->ID)
                     );
                 }
             }
