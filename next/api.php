@@ -3,6 +3,8 @@
     class PaladinsNextAPI {
         public function __construct() {
             add_action('rest_api_init', array($this, 'register_endpoints'));
+            add_filter( 'acf/format_value/name=news_data', array($this, 'extend_news_data'));
+
         }
 
         public function register_endpoints() {
@@ -73,6 +75,25 @@
             $child_items = [];
             $navbar_items = wp_get_nav_menu_items($string);
           return $navbar_items;
+        }
+
+        public function extend_news_data() {
+            $news = get_posts(array(
+                'post_type' => 'post',
+                'posts_per_page' => 8
+            ));
+            $arr = array();
+            if($news) {
+                foreach($news as $post) {
+                    $arr[] = array(
+                        'link' => get_permalink($post->ID),
+                        'bild' => get_the_post_thumbnail($post->id, 'medium' ),
+                        'datum' =>  get_the_date('d.m.Y', $post->ID),
+                        'title' => $post->post_title
+                    )
+                }
+            }
+            return $arr;
         }
     }
     $init = new PaladinsNextApi();
