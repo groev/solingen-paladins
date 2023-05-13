@@ -117,5 +117,29 @@
             }
             return $arr;
         }
+
+        public function extend_spielplan_data() {
+            $games = get_posts(array(
+                'post_type' => 'game',
+                'posts_per_page' => -1,
+                'meta_key' => 'datum',
+                'orderby' => 'meta_value_num',
+                'order' => "ASC"
+            ));
+            $arr = array();
+            if($games) {
+                foreach($games as $post) {
+                    $arr[] = array(
+                        'logo' => get_field('logo', $post->ID),
+                        'datum' =>  get_field('datum', $post->ID),
+                        'uhrzeit' =>  get_field('uhrzeit', $post->ID),
+                        'gegner' => get_field('gegner', $post->ID),
+                        'ort' => get_field('ort', $post->ID),
+                        'auswarts' => get_field('auswarts', $post->ID),
+                    );
+                }
+            }
+            return $arr;
+        }
     }
     $init = new PaladinsNextApi();
