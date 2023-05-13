@@ -2,7 +2,7 @@
     <h2 class="divider">Sponsoren und Partner</h2>
     <div class="slider-inner" >
     <?php 
-        $content = get_field('content', $block['bildquelle']);
+        $content = $block['bildquelle'];
         if($content) {
             foreach($content as $row) {
                 $bilder = $row['bilder'];
