@@ -63,13 +63,15 @@
             return array(
                 'logo' => get_field('theme_logo', 'option'),
                 'social' => get_field('social_media', 'option'),
-                'menu' => $this->get_menu()
+                'menu' => $this->get_menu('hauptnavigation'),
+                'footer' => $this->get_menu('footer'),
+                'preheader' => get_field('header', 'option')
             );
         }
 
-        public function get_menu() {
+        public function get_menu($string) {
             $child_items = [];
-            $navbar_items = wp_get_nav_menu_items('hauptnavigation');
+            $navbar_items = wp_get_nav_menu_items($string);
           return $navbar_items;
         }
     }
