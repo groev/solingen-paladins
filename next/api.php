@@ -5,7 +5,7 @@
             add_action('rest_api_init', array($this, 'register_endpoints'));
             add_filter( 'acf/format_value/name=news_data', array($this, 'extend_news_data'));
             add_filter( 'acf/format_value/name=slider_data', array($this, 'extend_slider_data'));
-
+            add_filter( 'acf/format_value/name=spielplan_data', array($this, 'extend_spielplan_data'));
 
         }
 
