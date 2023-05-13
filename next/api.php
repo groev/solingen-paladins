@@ -87,7 +87,7 @@
                 foreach($news as $post) {
                     $arr[] = array(
                         'link' => get_permalink($post->ID),
-                        'bild' => get_the_post_thumbnail($post->id, 'medium' ),
+                        'bild' => get_the_post_thumbnail($post->ID, 'medium' ),
                         'datum' =>  get_the_date('d.m.Y', $post->ID),
                         'title' => $post->post_title
                     );
