@@ -101,7 +101,7 @@
         public function extend_slider_data() {
             $news = get_posts(array(
                 'post_type' => 'post',
-                'posts_per_page' => 5
+                'posts_per_page' => 10
             ));
             $arr = array();
             if($news) {
