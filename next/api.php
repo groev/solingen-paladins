@@ -90,7 +90,7 @@
                         'bild' => get_the_post_thumbnail($post->id, 'medium' ),
                         'datum' =>  get_the_date('d.m.Y', $post->ID),
                         'title' => $post->post_title
-                    )
+                    );
                 }
             }
             return $arr;
