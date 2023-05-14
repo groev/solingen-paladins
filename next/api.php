@@ -81,8 +81,9 @@
                 return array(
                     'id' => $p->ID,
                     'title' => $p->post_title,
-                    'inhalt' => $p->post_content,
-                    'global' => $this->getHeader()
+                    'inhalt' => get_the_content($p->ID),
+                    'global' => $this->getHeader(),
+                    'thumbnail' => get_the_post_thumbnail_url($p->ID, 'full')
                 );
             }
             return new WP_Error('not found', 404);
