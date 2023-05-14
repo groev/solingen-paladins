@@ -21,6 +21,12 @@
                 'callback' => array($this, 'getPageBySlug'),
             ));
 
+            register_rest_route( 'next', '/news/(?P<slug>[a-zA-Z0-9-]+)', array(
+                'methods' => 'GET',
+                'callback' => array($this, 'getPostBySlug'),
+            ));
+
+
             register_rest_route( 'next', '/header', array(
                 'methods' => 'GET',
                 'callback' => array($this, 'getHeader'),
@@ -58,6 +64,24 @@
                     'id' => $p->ID,
                     'title' => $p->post_title,
                     'inhalt' => get_field('content', $p->ID),
+                    'global' => $this->getHeader()
+                );
+            }
+            return new WP_Error('not found', 404);
+        }
+
+        public function getPostBySlug($request) {
+            $posts = get_posts(array(
+                'post_type' => 'post', 
+                'name' => $request['slug'],
+                'posts_per_page' => 1
+            ));
+            if($posts) {
+                $p = $posts[0];
+                return array(
+                    'id' => $p->ID,
+                    'title' => $p->post_title,
+                    'inhalt' => $p->post_content,
                     'global' => $this->getHeader()
                 );
             }
