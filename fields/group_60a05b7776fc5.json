@@ -820,6 +820,21 @@
 					],
 					"min": "",
 					"max": ""
+				},
+				"layout_ticker_event": {
+					"key": "layout_ticker_event",
+					"name": "ticker",
+					"label": "Ticker",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_ticker_firebase_id",
+							"type": "text",
+							"name": "firebase_id"
+						}
+					],
+					"min": "",
+					"max": ""
 				}
 			},
 			"button_label": "Add Row",
