@@ -836,6 +836,21 @@
 					"min": "",
 					"max": ""
 				},
+				"layout_64340df2b5521abc": {
+					"key": "layout_64340df2b5521abc",
+					"name": "roster",
+					"label": "Roster",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_roster_data",
+							"type": "file",
+							"name": "roster_data"
+						}
+					],
+					"min": "",
+					"max": ""
+				},
 				"layout_ticker_event": {
 					"key": "layout_ticker_event",
 					"name": "ticker",
