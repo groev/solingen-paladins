@@ -300,6 +300,66 @@
 					"min": "",
 					"max": ""
 				},
+				"layout_roster": {
+					"key": "layout_roster",
+					"name": "roster",
+					"label": "Roster",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_roster_title",
+							"label": "Titel",
+							"name": "title",
+							"type": "text"
+						},
+						{
+							"key": "field_roster_file",
+							"label": "Datei",
+							"name": "file",
+							"type": "file"
+						},
+						{
+							"key": "field_roster_data",
+							"label": "Roster",
+							"name": "roster_data",
+							"type": "repeater",
+							"sub_fields": [
+								{
+									"type": "number",
+									"label": "Nummer",
+									"name": "roster_nummer",
+									"key": "flex_roster_nummer"
+								},
+								{
+									"type": "text",
+									"label": "Position",
+									"name": "roster_position",
+									"key": "flex_roster_position"
+								},
+								{
+									"type": "text",
+									"label": "Vorname",
+									"name": "roster_vorname",
+									"key": "flex_roster_vorname"
+								},
+								{
+									"type": "text",
+									"label": "Nachname",
+									"name": "roster_nachname",
+									"key": "flex_roster_nachname"
+								},
+								{
+									"type": "text",
+									"label": "Bild",
+									"name": "roster_bild",
+									"key": "flex_roster_bild"
+								}
+							]
+						}
+					],
+					"min": "",
+					"max": ""
+				},
 				"layout_60a125cb70eea": {
 					"key": "layout_60a125cb70eea",
 					"name": "block",
@@ -489,12 +549,18 @@
 					"min": "",
 					"max": ""
 				},
-				"layout_60a1331c07587xxx": {
-					"key": "layout_60a1331c07587xxx",
+				"layout_spielplanliste": {
+					"key": "layout_spielplanliste",
 					"name": "spielplanliste",
-					"label": "Spielplanliste",
+					"label": "Spielplan Erweitert",
 					"display": "block",
 					"sub_fields": [
+						{
+							"key": "field_spielplan_headline",
+							"type": "text",
+							"name": "spielplan_headline",
+							"label": "Headline"
+						},
 						{
 							"key": "field_spielplan_data_2",
 							"type": "text",
@@ -838,29 +904,92 @@
 				},
 				"layout_64340df2b5521abc": {
 					"key": "layout_64340df2b5521abc",
-					"name": "roster",
-					"label": "Roster",
+					"name": "Ticker",
+					"label": "Ticker",
 					"display": "block",
 					"sub_fields": [
 						{
-							"key": "field_roster_data",
-							"type": "file",
-							"name": "roster_data"
+							"key": "field_firebase_id",
+							"type": "text",
+							"name": "firebase_id"
 						}
 					],
 					"min": "",
 					"max": ""
 				},
-				"layout_ticker_event": {
-					"key": "layout_ticker_event",
-					"name": "ticker",
-					"label": "Ticker",
+				"layout_banner": {
+					"key": "layout_banner",
+					"name": "banner",
+					"label": "Banner",
 					"display": "block",
 					"sub_fields": [
 						{
-							"key": "field_ticker_firebase_id",
+							"key": "field_banner_image",
+							"type": "image",
+							"return_format": "url",
+							"name": "banner_image",
+							"label": "Bild"
+						},
+						{
+							"key": "field_banner_link",
+							"type": "link",
+							"name": "banner_link",
+							"label": "Link"
+						}
+					],
+					"min": "",
+					"max": ""
+				},
+				"layout_merch": {
+					"key": "layout_merch",
+					"name": "merch",
+					"label": "Merch",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_merch_headline",
 							"type": "text",
-							"name": "firebase_id"
+							"label": "Headline",
+							"name": "merch_headline"
+						},
+						{
+							"key": "field_merch_content",
+							"type": "wysiwyg",
+							"label": "Text",
+							"name": "merch_content"
+						},
+						{
+							"key": "field_merch_items",
+							"type": "repeater",
+							"label": "Produkte",
+							"name": "merch_items",
+							"sub_fields": [
+								{
+									"key": "field_merch_item_image",
+									"type": "gallery",
+									"label": "Bild",
+									"return_value": "url",
+									"name": "merch_item_image"
+								},
+								{
+									"key": "field_merch_item_title",
+									"type": "text",
+									"label": "Name",
+									"name": "merch_item_title"
+								},
+								{
+									"key": "field_merch_item_description",
+									"type": "text",
+									"label": "Beschreibung",
+									"name": "merch_item_description"
+								},
+								{
+									"key": "field_merch_item_price",
+									"type": "text",
+									"label": "Preis",
+									"name": "merch_item_price"
+								}
+							]
 						}
 					],
 					"min": "",
