@@ -489,6 +489,21 @@
 					"min": "",
 					"max": ""
 				},
+				"layout_60a1331c07587xxx": {
+					"key": "layout_60a1331c07587xxx",
+					"name": "spielplanliste",
+					"label": "Spielplanliste",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_spielplan_data",
+							"type": "text",
+							"name": "spielplan_data"
+						}
+					],
+					"min": "",
+					"max": ""
+				},
 				"layout_60a148d1c591f": {
 					"key": "layout_60a148d1c591f",
 					"name": "bildraster",
