@@ -496,7 +496,7 @@
 					"display": "block",
 					"sub_fields": [
 						{
-							"key": "field_spielplan_data",
+							"key": "field_spielplan_data_2",
 							"type": "text",
 							"name": "spielplan_data"
 						}
