@@ -7,9 +7,53 @@
             add_filter( 'acf/format_value/name=slider_data', array($this, 'extend_slider_data'));
             add_filter( 'acf/format_value/name=spielplan_data', array($this, 'extend_spielplan_data'));
             add_filter( 'acf/format_value/name=bildquelle', array($this, 'extend_sponsoren_data'));
+            add_action('acf/save_post', array($this, 'update_roster'),10,1);
+            add_action('acf/save_post', array($this, 'invalidate_cache'),10,1);
 
         }
 
+        public function update_roster($postid) {
+            $i = 0;
+            if(isset($_POST['acf']['field_60a05b7a30107'])) {
+                $fc = $_POST['acf']['field_60a05b7a30107'];
+                if(is_array($fc)) {
+                    foreach($fc as $row) {
+                        $i++;
+                        if($row['acf_fc_layout'] == "roster") {
+                            $rowindex = $i;
+                            $data = array();
+                            if(!$row['field_roster_file']) continue;
+
+                            $file = fopen(get_attached_file($row['field_roster_file']),'r');
+                            while (! feof($file)) {
+                                $data[] = fgetcsv($file, 1000, ",");
+                            }
+                            fclose($file);
+                            $repeater = array();
+                            if($data) {
+                                foreach($data as $p) {
+                                    $repeater[] = array(
+                                        'roster_nummer' => $p[0],
+                                        'roster_position' => $p[1],
+                                        'roster_vorname' => $p[3],
+                                        'roster_nachname' => $p[2],
+                                        'roster_bild' => $p[5]
+                                    );
+                                }
+                            }
+                            $row['field_roster_data'] = $repeater;
+                            $row['field_roster_file'] = false;
+
+                            update_row('content', $i, $row, $postid);
+
+                        }
+                    }
+                }
+            }
+        }
+
+       
+       
         public function register_endpoints() {
             register_rest_route( 'next', '/pages', array(
                 'methods' => 'GET',
@@ -42,9 +86,10 @@
             $posts = get_posts($args);
             if($posts) {
                 foreach($posts as $post) {
+                    if($post->post_name === "news") continue;
                     $data[] = array(
                         'params' =>  array(
-                            'slug' => array($post->post_name)
+                            'slug' => explode('/',get_page_uri($post->ID))
                         )
                     );
                 }
@@ -54,20 +99,24 @@
 
         public function getPageBySlug($request) {
             $posts = get_posts(array(
-                'post_type' => 'page', 
                 'name' => $request['slug'],
-                'posts_per_page' => 1
+                'posts_per_page' => 1,
+                'post_type' => ['page']
             ));
             if($posts) {
                 $p = $posts[0];
+
                 return array(
+                    'post_type' => $p->post_type,
                     'id' => $p->ID,
+					'date' => $p->post_date_gmt,
                     'title' => $p->post_title,
                     'inhalt' => get_field('content', $p->ID),
-                    'global' => $this->getHeader()
+                    'global' => $this->getHeader(),
+
                 );
             }
-            return new WP_Error('not found', 404);
+            return new WP_Error( 'page not found', 'invalid page', array( 'status' => 404 ) );
         }
 
         public function getPostBySlug($request) {
@@ -80,13 +129,14 @@
                 $p = $posts[0];
                 return array(
                     'id' => $p->ID,
+                    'date' => $p->post_date_gmt,
                     'title' => $p->post_title,
-                    'inhalt' => get_the_content($p->ID),
-                    'global' => $this->getHeader(),
-                    'thumbnail' => get_the_post_thumbnail_url($p->ID, 'full')
+                    'inhalt' => wpautop($p->post_content),
+                    'thumbnail' => get_the_post_thumbnail_url($p->ID, 'full'),
+                    'global' => $this->getHeader()
                 );
             }
-            return new WP_Error('not found', 404);
+            return new WP_Error( 'post not found', 'invalid post', array( 'status' => 404 ) );
         }
 
         public function getHeader() {
@@ -162,6 +212,8 @@
                         'gegner' => get_field('gegner', $post->ID),
                         'ort' => get_field('ort', $post->ID),
                         'auswarts' => get_field('auswarts', $post->ID),
+                        "link" => get_field('ticketlink', $post->ID),
+                        'ergebnis' => get_field('ergebnis', $post->ID)
                     );
                 }
             }
@@ -172,5 +224,29 @@
             $arr = get_field('content', $value);
             return $arr;
         }
+
+        public function invalidate_cache($postid) {
+            $post = get_post($postid);
+
+            if($post->post_type === "post") {
+                self::revalidate('page-homepage-2');
+                self::revalidate('page-news');
+                self::revalidate('posts');
+                self::revalidate('post-'.$post->post_name);
+            }
+
+            if($post->post_type === "page") {
+                self::revalidate('page-'.$post->post_name);
+                self::revalidate('pages');
+            }
+
+        }
+
+        public static function revalidate($tag) {
+            return true;
+            return wp_remote_get('https://paladins-next.netlify.app/api/revalidate?tag='.$tag);
+        }
+
+    
     }
     $init = new PaladinsNextApi();
