@@ -904,7 +904,7 @@
 				},
 				"layout_64340df2b5521abc": {
 					"key": "layout_64340df2b5521abc",
-					"name": "Ticker",
+					"name": "ticker",
 					"label": "Ticker",
 					"display": "block",
 					"sub_fields": [
