@@ -98,6 +98,25 @@
 			"maxlength": ""
 		},
 		{
+			"key": "field_60asss13454fssb044",
+			"label": "Ergebnis",
+			"name": "ergebnis",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
 			"key": "field_60a13469399c3",
 			"label": "Auswärts",
 			"name": "auswarts",
