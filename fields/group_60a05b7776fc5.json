@@ -994,6 +994,61 @@
 					],
 					"min": "",
 					"max": ""
+				},
+				"layout_merch": {
+					"key": "layout_info_items",
+					"name": "info_items",
+					"label": "Info Blöcke",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_info_headline",
+							"type": "text",
+							"label": "Headline",
+							"name": "info_headline"
+						},
+						{
+							"key": "field_info_subline",
+							"type": "text",
+							"label": "Text",
+							"name": "info_subline"
+						},
+						{
+							"key": "field_info_items",
+							"type": "repeater",
+							"label": "Items",
+							"name": "info_items",
+							"sub_fields": [
+								{
+									"key": "field_info_item_image",
+									"type": "image",
+									"label": "Bild",
+									"return_value": "url",
+									"name": "info_item_image"
+								},
+								{
+									"key": "field_info_item_title",
+									"type": "text",
+									"label": "Name",
+									"name": "info_item_title"
+								},
+								{
+									"key": "field_info_item_description",
+									"type": "text",
+									"label": "Beschreibung",
+									"name": "info_item_description"
+								},
+								{
+									"key": "field_info_item_link",
+									"type": "link",
+									"label": "Link",
+									"name": "info_item_link"
+								}
+							]
+						}
+					],
+					"min": "",
+					"max": ""
 				}
 			},
 			"button_label": "Add Row",
