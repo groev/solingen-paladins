@@ -995,7 +995,7 @@
 					"min": "",
 					"max": ""
 				},
-				"layout_merch": {
+				"layout_infoblock": {
 					"key": "layout_info_items",
 					"name": "info_items",
 					"label": "Info Blöcke",
