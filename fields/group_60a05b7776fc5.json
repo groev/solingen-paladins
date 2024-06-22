@@ -1023,7 +1023,7 @@
 									"key": "field_info_item_image",
 									"type": "image",
 									"label": "Bild",
-									"return_value": "url",
+									"return_format": "url",
 									"name": "info_item_image"
 								},
 								{
