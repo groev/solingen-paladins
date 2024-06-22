@@ -1014,6 +1014,12 @@
 							"name": "info_subline"
 						},
 						{
+							"key": "field_info_contain",
+							"type": "true_false",
+							"label": "Bilder einfassen",
+							"name": "info_contain"
+						},
+						{
 							"key": "field_info_items",
 							"type": "repeater",
 							"label": "Items",
