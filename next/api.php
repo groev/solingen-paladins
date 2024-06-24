@@ -206,6 +206,7 @@
             if($games) {
                 foreach($games as $post) {
                     $arr[] = array(
+			'id' => $post->ID,
                         'logo' => get_field('logo', $post->ID),
                         'datum' =>  get_field('datum', $post->ID),
                         'uhrzeit' =>  get_field('uhrzeit', $post->ID),
