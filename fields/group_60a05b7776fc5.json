@@ -917,6 +917,28 @@
 					"min": "",
 					"max": ""
 				},
+				"layout_pdf": {
+					"key": "layout_pdf",
+					"name": "pdf",
+					"label": "PDF Flipbook",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "pdf_file",
+							"type": "file",
+							"name": "pdf",
+							"return_format":"url"
+						},
+						{
+							"key": "pdf_headline",
+							"type": "text",
+							"name": "headline",
+						},
+						
+					],
+					"min": "",
+					"max": ""
+				},
 				"layout_banner": {
 					"key": "layout_banner",
 					"name": "banner",
